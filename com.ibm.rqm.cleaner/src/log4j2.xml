@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed Materials - Property of IBM
+	© Copyright IBM Corporation 2022. All Rights Reserved.
+    
+    Note to U.S. Government Users Restricted Rights:  
+    Use, duplication or disclosure restricted by GSA ADP Schedule 
+    Contract with IBM Corp. 
+ -->
+<Configuration status="ERROR" monitorInterval="10">
+	<Properties>
+	    <Property name="consolePattern">%m%n</Property>
+        <Property name="pattern">%d{ISO8601_OFFSET_DATE_TIME_HHMM} [%t] %-5p %-5c - %m%n</Property>
+        <Property name="performancePattern">[%d{dd MMM yyyy HH:mm:ss,SSSZ}] %m%n</Property>
+    </Properties>
+	
+	<Appenders>
+		<Console name="stdout" target="SYSTEM_OUT">
+            <PatternLayout pattern="${consolePattern}"/>
+		</Console>
+		
+		<!-- Cleaner Utility General Log File Appender -->
+		<RollingFile name="cleanerUtility" filename="cleanerUtility.log" filePattern="cleanerUtility-%i.log">
+			<PatternLayout pattern="${pattern}"/>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="10MB"/>
+			</Policies>
+			<DefaultRolloverStrategy max="5"/>
+		</RollingFile>
+		
+		<!-- Cleaner Utility performance Log File Appender -->
+		<RollingFile name="cleanerUtilityPerformance" filename="cleanerUtilityPerformance.log" filePattern="cleanerUtilityPerformance-%i.log">
+			<PatternLayout pattern="${performancePattern}"/>
+			<Policies>
+				<!--
+				Note:The maximum performance log file size  is set to 25 MB so each performance log file can be easily opened in all text editors (e.g. Archive Explorer web editor used by IBM Support)			
+				-->
+				<SizeBasedTriggeringPolicy size="25MB"/>
+			</Policies>
+			<!--
+			Note: The maximum number of performance log files is set to 1001 (1 performance log file + 1000 backup performance log files)			
+			-->
+			<DefaultRolloverStrategy max="1001"/>
+		</RollingFile>
+		
+	</Appenders>
+    <Loggers>
+		<Root level="ERROR">						
+		</Root>
+				
+		<!-- Default com.ibm.rqm.cleaner package log level is set as INFO.-->
+		<!-- Some arguments have been removed from the Cleaner Utility and replaced by this logger as follows:
+			* Argument -l, -log: Change logger com.ibm.rqm.cleaner to DEBUG level and uncomment cleanerUtility appender. All (debug, informational) log messages and pre/post-updated resources (RDF/XML) will be logged to cleanerUtility.log. Otherwise, log messages are logged to the console only. 			
+			* Argument -d, -debug: Change logger com.ibm.rqm.cleaner to TRACE level and uncomment cleanerUtility appender. Logs verbose OSLC Cleaner Utility (trace, debug, informational )log messages and pre/post-updated resources (RDF/XML) will be logged to cleanerUtility.log. Note: For internal use only to diagnose an unexpected behavior.   			 
+		--> 
+		<Logger name="com.ibm.rqm.cleaner" level="INFO">
+		
+		<!-- Logging in to cleanerUtility.log is disabled. Uncomment cleanerUtility reference to enable it. --> 			
+			<!--
+			<AppenderRef ref="cleanerUtility"/>
+			-->
+			<AppenderRef ref="stdout"/>		
+		</Logger>
+		
+		<!-- Default com.ibm.rqm.cleaner.internal.util.PerformanceUtils package log level is set as OFF. -->
+		<!-- Some arguments have been removed from Cleaner Utility and replaced by this logger as follows:
+			* Argument -p, -performance: Change logger com.ibm.rqm.cleaner.internal.util.PerformanceUtils to TRACE and uncomment cleanerUtilityPerformance appender.
+		--> 
+		<Logger name="com.ibm.rqm.cleaner.internal.util.PerformanceUtils" level="OFF">
+			<!-- Logging in to cleanerUtilityPerformance.log is disabled. Uncomment cleanerUtilityPerformance reference to enable it.--> 			
+			<!--		
+			<AppenderRef ref="cleanerUtilityPerformance"/>
+			-->			
+		</Logger>
+		
+		<!-- Default IntegrationClient log level as ERROR -->
+		<Logger name="com.ibm.rqm.integration.client.clientlib" level="ERROR">
+		<!-- Logging in to cleanerUtility.log is disabled. Uncomment cleanerUtility reference to enable it.--> 			
+			<!--		
+			<AppenderRef ref="cleanerUtility"/>
+			-->
+			<AppenderRef ref="stdout"/>	
+		</Logger>
+			
+		<!-- Default IntegrationClient log level as ERROR -->
+		<Logger name="com.ibm.rqm.integration.client.clientlib" level="ERROR">
+			<AppenderRef ref="stdout"/>	
+			<!-- Logging in to cleanerUtility.log is disabled. Uncomment cleanerUtility reference to enable it.--> 			
+			<!--		
+			<AppenderRef ref="cleanerUtility"/>
+			-->
+		</Logger>	
+ 		
+ 		<!-- Enable additional loggers in some dependencies as needed -->
+ 		<!-- Some arguments have been removed from Cleaner Utility and replaced by this logger as follows:
+			* Argument -hd, -httpDebug: Change logger org.apache.http to TRACE level  and uncomment cleanerUtility appender
+		-->  		
+		<Logger name="org.apache.http" level="OFF">
+			<AppenderRef ref="stdout"/>	
+			<!-- Logging in to cleanerUtility.log is disabled. Uncomment cleanerUtility reference to enable it.--> 			
+			<!--		
+			<AppenderRef ref="cleanerUtility"/>
+			-->		
+		</Logger>		
+		
+		<!-- Default org.apache.commons log level as OFF -->		
+		<Logger name="org.apache.commons" level="OFF">
+			<AppenderRef ref="stdout"/>	
+			<!-- Logging in to cleanerUtility.log is disabled. Uncomment cleanerUtility reference to enable it.--> 			
+			<!--		
+			<AppenderRef ref="cleanerUtility"/>
+			-->		
+		</Logger>
+		
+		<!-- Default org.apache.wink log level as OFF -->		
+		<Logger name="org.apache.wink" level="OFF">
+			<AppenderRef ref="stdout"/>	
+			<!-- Logging in to cleanerUtility.log is disabled. Uncomment cleanerUtility reference to enable it.--> 			
+			<!--		
+			<AppenderRef ref="cleanerUtility"/>
+			-->		
+		</Logger>
+		
+		<!-- Default com.hp.hpl.jena log level as OFF -->		
+		<Logger name="com.hp.hpl.jena" level="OFF">
+			<AppenderRef ref="stdout"/>	
+			<!-- Logging in to cleanerUtility.log is disabled. Uncomment cleanerUtility reference to enable it.--> 			
+			<!--		
+			<AppenderRef ref="cleanerUtility"/>
+			-->		
+		</Logger>
+		 	
+    </Loggers>
+</Configuration>

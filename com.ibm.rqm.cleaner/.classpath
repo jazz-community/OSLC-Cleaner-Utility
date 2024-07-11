@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/com.ibm.icu.base_4.0.1.v20090822.jar"/>
+	<classpathentry kind="lib" path="lib/com.sun.xml.bind_2.2.0.v201105210647.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/javax.activation_1.1.0.v201108011116.jar"/>
+	<classpathentry kind="lib" path="lib/javax.annotation_1.0.0.v20101115-0725.jar"/>
+	<classpathentry kind="lib" path="lib/javax.servlet_2.5.0.v201103041518.jar"/>
+	<classpathentry kind="lib" path="lib/javax.servlet_3.0.0.v201112011016.jar"/>
+	<classpathentry kind="lib" path="lib/javax.ws.rs_1.1.1.v20101004-1200.jar"/>
+	<classpathentry kind="lib" path="lib/javax.xml_1.3.4.v201005080400.jar"/>
+	<classpathentry kind="lib" path="lib/javax.xml.bind_2.2.0.v201105210648.jar"/>
+	<classpathentry kind="lib" path="lib/javax.xml.stream_1.0.1.v201004272200.jar"/>
+	<classpathentry kind="lib" path="lib/jena-core-2.7.4_patched.jar"/>
+	<classpathentry kind="lib" path="lib/jena-iri-0.9.4.jar"/>
+	<classpathentry kind="lib" path="lib/oauth-20090617.jar" sourcepath="/org.eclipse.lyo.client.java.oauth.sample/src/main/java"/>
+	<classpathentry kind="lib" path="lib/oauth-consumer-20090617.jar"/>
+	<classpathentry kind="lib" path="lib/oauth-httpclient4-20090617.jar"/>
+	<classpathentry kind="lib" path="lib/org.apache.xerces_2.8.0.v200803070308.jar"/>
+	<classpathentry kind="lib" path="lib/wink-client-1.2.1-incubating.jar"/>
+	<classpathentry kind="lib" path="lib/wink-client-apache-httpclient-1.2.1-incubating.jar"/>
+	<classpathentry kind="lib" path="lib/wink-common-1.2.1-incubating.jar"/>
+	<classpathentry kind="lib" path="lib/wink-json4j-1.2.1-incubating.jar"/>
+	<classpathentry kind="lib" path="lib/wink-json4j-provider-1.2.1-incubating.jar"/>
+	<classpathentry kind="lib" path="lib/wink-server-1.2.1-incubating.jar"/>
+	<classpathentry kind="lib" path="lib/oslc-java-client-2.4.0.jar" sourcepath="/org.eclipse.lyo.client.java/src"/>
+	<classpathentry kind="lib" path="lib/oslc-query-2.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/oslc-trs-2.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/oslc4j-core-2.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/oslc4j-jena-provider-2.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/oslc4j-json4j-provider-2.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/oslc4j-utils-2.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/oslc4j-wink-2.1.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="lib" path="lib/log4j-slf4j-impl-2.17.1.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

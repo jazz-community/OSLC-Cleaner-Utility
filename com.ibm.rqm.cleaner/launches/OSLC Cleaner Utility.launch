@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+    <stringAttribute key="bad_container_name" value="/Users/paulslauenwhite/Workspaces/Quality_Manager_Mainline/com.ibm.rqm.cleaner/launches"/>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+        <listEntry value="/com.ibm.rqm.cleaner/src/com/ibm/rqm/cleaner/CleanerUtility.java"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+        <listEntry value="1"/>
+    </listAttribute>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_ATTR_USE_ARGFILE" value="false"/>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_CLASSPATH_ONLY_JAR" value="false"/>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
+    <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11/"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.ibm.rqm.cleaner.CleanerUtility"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="com.ibm.rqm.cleaner"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-c=readTrs2 -qm=https://localhost:9443/jazz -cr=https://localhost:9443/jazz::TestJazzAdmin1::password -od=/Users/paulslauenwhite/Downloads/output_directory -t2pt=http://open-services.net/ns/qm#,http://jazz.net/ns/process# -l=cleanerlog.txt -o"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="com.ibm.rqm.cleaner"/>
+</launchConfiguration>
